@@ -158,7 +158,7 @@ img{max-width:100%;display:block}
 .glass-card h3,.step-card h3{font-size:24px;margin:0 0 12px}
 .glass-card p,.step-card p{margin:0;color:var(--muted);line-height:1.7}
 .clean-list{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:14px}
-.clean-list li{padding:16px 18px 16px 44px;border-radius:18px;background:var(--panel-2);border:1px solid var(--line);position:relative;color:#edf4ff}
+.clean-list li{padding:16px 18px 16px 44px;border-radius:18px;background:var(--panel-2);border:1px solid var(--line);position:relative;color:var(--text)}
 .clean-list li::before{content:"";position:absolute;left:18px;top:22px;width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--primary-2),var(--primary))}
 .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .step-card{padding:28px;border-radius:28px;min-height:280px}
