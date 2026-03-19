@@ -1,5 +1,33 @@
 const slides = [...document.querySelectorAll('.slide')];
 const dotsWrap = document.querySelector('.slider-dots');
+const themeButtons = [...document.querySelectorAll('.theme-toggle')];
+const body = document.body;
+const THEME_STORAGE_KEY = 'biomaussan-theme';
+
+function setTheme(mode){
+  const isDark = mode === 'dark';
+  body.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  themeButtons.forEach((button) => {
+    const text = button.querySelector('.theme-toggle-text');
+    const icon = button.querySelector('.theme-toggle-icon');
+    if (text) text.textContent = isDark ? 'Light mode' : 'Dark mode';
+    if (icon) icon.textContent = isDark ? '☀️' : '🌙';
+    button.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    button.setAttribute('aria-pressed', String(isDark));
+  });
+}
+
+const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+setTheme(savedTheme === 'dark' ? 'dark' : 'light');
+
+themeButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const nextTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    setTheme(nextTheme);
+    localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+  });
+});
+
 let current = 0;
 slides.forEach((_, i) => {
   const btn = document.createElement('button');

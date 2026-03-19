@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-<body>
+<body data-theme="light">
   <div class="site-bg"></div>
   <header class="topbar">
     <div class="container nav-wrap">
@@ -24,10 +24,18 @@
         <a href="#process">Process</a>
         <a href="#contact">Contact</a>
       </nav>
+      <button class="theme-toggle desktop-theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+        <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+        <span class="theme-toggle-text">Dark</span>
+      </button>
       <a class="btn btn-outline desktop-only" href="#contact">Become a Partner</a>
       <button class="menu-toggle" aria-label="Open menu">☰</button>
     </div>
     <div class="mobile-menu">
+      <button class="theme-toggle mobile-theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+        <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+        <span class="theme-toggle-text">Dark mode</span>
+      </button>
       <a href="#about">About</a>
       <a href="#expansion">Expansion</a>
       <a href="#opportunities">Opportunities</a>
