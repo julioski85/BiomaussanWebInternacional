@@ -281,6 +281,10 @@ const translations = {
   }
 };
 
+if (window.lucide && typeof window.lucide.createIcons === 'function') {
+  window.lucide.createIcons();
+}
+
 const LANGUAGE_STORAGE_KEY = 'biomaussan-language';
 const THEME_STORAGE_KEY = 'biomaussan-theme';
 

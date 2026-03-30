@@ -243,18 +243,38 @@ img{max-width:100%;display:block}
   gap:12px;
   padding:18px 20px;
   cursor:pointer;
+  transition:background .25s ease;
+}
+.accordion-item summary:hover{
+  background:color-mix(in srgb,var(--primary) 7%, transparent 93%);
 }
 .accordion-item summary::-webkit-details-marker{display:none}
-.accordion-item summary h3{margin:0;font-size:20px;flex:1}
+.accordion-item summary h3{margin:0;font-size:20px;line-height:1.25;flex:1}
 .accordion-icon{
-  width:34px;
-  height:34px;
-  border-radius:10px;
+  width:36px;
+  height:36px;
+  border-radius:11px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  background:color-mix(in srgb,var(--primary) 18%, transparent 82%);
-  border:1px solid color-mix(in srgb,var(--primary) 34%, var(--line) 66%);
+  flex-shrink:0;
+  background:linear-gradient(145deg,color-mix(in srgb,var(--primary) 20%, transparent 80%), color-mix(in srgb,var(--primary-2) 14%, transparent 86%));
+  border:1px solid color-mix(in srgb,var(--primary) 35%, var(--line) 65%);
+  color:var(--primary);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14);
+  transition:transform .25s ease, background .25s ease, border-color .25s ease, color .25s ease;
+}
+.accordion-icon svg{
+  width:18px;
+  height:18px;
+  stroke-width:1.9;
+}
+.accordion-item summary:hover .accordion-icon,
+.accordion-item[open] .accordion-icon{
+  transform:translateY(-1px);
+  background:linear-gradient(145deg,color-mix(in srgb,var(--primary) 26%, transparent 74%), color-mix(in srgb,var(--primary-2) 18%, transparent 82%));
+  border-color:color-mix(in srgb,var(--primary) 48%, var(--line) 52%);
+  color:color-mix(in srgb,var(--primary-2) 70%, var(--primary) 30%);
 }
 .accordion-item summary::after{
   content:'+';
@@ -383,5 +403,8 @@ input:focus,select:focus,textarea:focus{border-color:rgba(104,217,255,.65);box-s
   .form-subtitle{margin-bottom:16px}
   .accordion-item summary{padding:16px}
   .accordion-item summary h3{font-size:18px}
+  .accordion-item summary{gap:10px}
+  .accordion-icon{width:34px;height:34px}
+  .accordion-icon svg{width:17px;height:17px}
   .accordion-body{padding:0 16px 16px}
 }
