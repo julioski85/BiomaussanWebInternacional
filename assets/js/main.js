@@ -68,6 +68,10 @@ const translations = {
     contact: {
       eyebrow: 'Contact', title: 'Let’s Build New Markets Together',
       intro: 'This process is intended for serious business profiles with real capacity for distribution and market development.',
+      formBadge: 'Distributor Application · Confidential Review',
+      formTitle: 'Start Your Qualification',
+      formSubtitle: 'Complete the required fields and our international team will review your profile.',
+      finalStrategicTitle: 'Final Strategic Note',
       requirements: {
         title: 'Key Requirements (Self-Assessment)',
         intro: 'Before continuing with the process, please confirm that you meet the following criteria:',
@@ -204,6 +208,10 @@ const translations = {
     contact: {
       eyebrow: 'Contacto', title: 'Construyamos nuevos mercados juntos',
       intro: 'Este proceso está dirigido a perfiles empresariales serios con capacidad real de distribución y desarrollo de mercado.',
+      formBadge: 'Solicitud de distribuidor · Revisión confidencial',
+      formTitle: 'Inicia tu calificación',
+      formSubtitle: 'Completa los campos requeridos y nuestro equipo internacional revisará tu perfil.',
+      finalStrategicTitle: 'Nota estratégica final',
       requirements: {
         title: 'Requisitos Clave (Autoevaluación)',
         intro: 'Antes de continuar con el proceso, confirme que cumple con los siguientes puntos:',
@@ -391,6 +399,20 @@ if (toggle) {
 }
 
 document.querySelectorAll('.mobile-menu a').forEach((link) => link.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+
+const accordionGroups = document.querySelectorAll('.accordion-stack');
+accordionGroups.forEach((group) => {
+  const items = [...group.querySelectorAll('.accordion-item')];
+  items.forEach((item) => {
+    item.addEventListener('toggle', () => {
+      if (!item.open) return;
+      items.forEach((other) => {
+        if (other !== item) other.open = false;
+      });
+    });
+  });
+});
 
 const form = document.getElementById('interestForm');
 const success = document.getElementById('formSuccess');
