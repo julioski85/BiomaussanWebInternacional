@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="assets/css/styles.css?v=4" />
+ <link rel="stylesheet" href="assets/css/styles.css?v=5" />
 </head>
 <body data-theme="light">
   <div class="site-bg"></div>
@@ -18,29 +18,39 @@
         <img src="assets/img/logo-biomaussan.png" alt="Biomaussan International logo">
       </a>
       <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#expansion">Expansion</a>
-        <a href="#opportunities">Opportunities</a>
-        <a href="#process">Process</a>
-        <a href="#contact">Contact</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#expansion" data-i18n="nav.expansion">Expansion</a>
+        <a href="#opportunities" data-i18n="nav.opportunities">Opportunities</a>
+        <a href="#process" data-i18n="nav.process">Process</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
+      <div class="language-switcher desktop-lang" role="group" aria-label="Language selector" data-i18n-aria-label="ui.languageSelector">
+        <button class="lang-btn active" type="button" data-lang="en">EN</button>
+        <button class="lang-btn" type="button" data-lang="es">ES</button>
+      </div>
       <button class="theme-toggle desktop-theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
-        <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
-        <span class="theme-toggle-text">Dark</span>
-      </button>
-      <a class="btn btn-outline desktop-only" href="#contact">Become a Partner</a>
-      <button class="menu-toggle" aria-label="Open menu">☰</button>
-    </div>
-    <div class="mobile-menu">
-      <button class="theme-toggle mobile-theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
         <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
         <span class="theme-toggle-text">Dark mode</span>
       </button>
-      <a href="#about">About</a>
-      <a href="#expansion">Expansion</a>
-      <a href="#opportunities">Opportunities</a>
-      <a href="#process">Process</a>
-      <a href="#contact">Contact</a>
+      <a class="btn btn-outline desktop-only" href="#contact" data-i18n="hero.secondaryBtn">Become a Partner</a>
+      <button class="menu-toggle" aria-label="Open menu" data-i18n-aria-label="ui.openMenu">☰</button>
+    </div>
+    <div class="mobile-menu">
+      <div class="mobile-menu-tools">
+        <div class="language-switcher mobile-lang" role="group" aria-label="Language selector" data-i18n-aria-label="ui.languageSelector">
+          <button class="lang-btn active" type="button" data-lang="en">EN</button>
+          <button class="lang-btn" type="button" data-lang="es">ES</button>
+        </div>
+        <button class="theme-toggle mobile-theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+          <span class="theme-toggle-text">Dark mode</span>
+        </button>
+      </div>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#expansion" data-i18n="nav.expansion">Expansion</a>
+      <a href="#opportunities" data-i18n="nav.opportunities">Opportunities</a>
+      <a href="#process" data-i18n="nav.process">Process</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
     </div>
   </header>
 
@@ -52,17 +62,17 @@
         <div class="slide" style="background-image:url('assets/img/international-growth.jpg?v=3')"></div>
       </div>
       <div class="container hero-content reveal">
-        <span class="eyebrow">Biomaussan International</span>
-        <h1>Expanding Wellness Beyond Borders</h1>
-        <p>Biomaussan International lleva productos de bienestar de alta calidad desde México hacia el mundo, iniciando en Estados Unidos a través del comercio electrónico y una estrategia de expansión global.</p>
+        <span class="eyebrow" data-i18n="hero.eyebrow">Biomaussan International</span>
+        <h1 data-i18n="hero.title">Expanding Wellness Beyond Borders</h1>
+        <p data-i18n="hero.description">Biomaussan International brings high-quality wellness products from Mexico to global markets, starting in the United States through e-commerce and a strategic expansion model.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact">Shop in the U.S.</a>
-          <a class="btn btn-glass" href="#contact">Become a Partner</a>
+          <a class="btn btn-primary" href="#contact" data-i18n="hero.primaryBtn">Shop in the U.S.</a>
+          <a class="btn btn-glass" href="#contact" data-i18n="hero.secondaryBtn">Become a Partner</a>
         </div>
         <div class="hero-badges">
-          <span>Wellness Innovation</span>
-          <span>E-commerce Strategy</span>
-          <span>Global Expansion</span>
+          <span data-i18n="hero.badges.0">Wellness Innovation</span>
+          <span data-i18n="hero.badges.1">E-commerce Strategy</span>
+          <span data-i18n="hero.badges.2">Global Expansion</span>
         </div>
       </div>
       <div class="slider-dots" aria-hidden="true"></div>
@@ -71,13 +81,13 @@
     <section class="section" id="about">
       <div class="container grid-2">
         <div class="section-copy reveal">
-          <span class="eyebrow">Who We Are</span>
-          <h2>A Global Vision Rooted in Wellness</h2>
-          <p>Biomaussan International nace con el propósito de expandir el alcance de los productos Biomaussan más allá de México, conectando con consumidores y socios estratégicos en mercados internacionales.</p>
+          <span class="eyebrow" data-i18n="about.eyebrow">Who We Are</span>
+          <h2 data-i18n="about.title">A Global Vision Rooted in Wellness</h2>
+          <p data-i18n="about.description">Biomaussan International was created to expand Biomaussan products beyond Mexico, connecting with consumers and strategic partners in international markets.</p>
           <div class="bullet-list">
-            <div><strong>Innovación</strong><span>en productos de bienestar</span></div>
-            <div><strong>E-commerce</strong><span>como motor de expansión</span></div>
-            <div><strong>Estructura</strong><span>comercial para crecimiento global</span></div>
+            <div><strong data-i18n="about.bullets.0.strong">Innovation</strong><span data-i18n="about.bullets.0.text">in wellness products</span></div>
+            <div><strong data-i18n="about.bullets.1.strong">E-commerce</strong><span data-i18n="about.bullets.1.text">as an expansion engine</span></div>
+            <div><strong data-i18n="about.bullets.2.strong">Commercial structure</strong><span data-i18n="about.bullets.2.text">for global growth</span></div>
           </div>
         </div>
         <div class="media-card reveal delay-2 tilt-card">
@@ -89,20 +99,20 @@
     <section class="section alt" id="expansion">
       <div class="container">
         <div class="section-heading center reveal">
-          <span class="eyebrow">Expansion Model</span>
-          <h2>From E-commerce to Physical Presence</h2>
-          <p>Nuestro modelo de crecimiento está diseñado en dos fases estratégicas.</p>
+          <span class="eyebrow" data-i18n="expansion.eyebrow">Expansion Model</span>
+          <h2 data-i18n="expansion.title">From E-commerce to Physical Presence</h2>
+          <p data-i18n="expansion.description">Our growth model is built in two strategic phases.</p>
         </div>
         <div class="phase-grid">
           <article class="glass-card reveal">
             <div class="phase-number">01</div>
-            <h3>U.S. E-commerce Launch</h3>
-            <p>Lanzamiento en Estados Unidos mediante plataformas de comercio electrónico, optimizando alcance, logística y experiencia del cliente.</p>
+            <h3 data-i18n="expansion.phases.0.title">U.S. E-commerce Launch</h3>
+            <p data-i18n="expansion.phases.0.text">Launch in the United States through e-commerce platforms, optimizing reach, logistics, and customer experience.</p>
           </article>
           <article class="glass-card reveal delay-2">
             <div class="phase-number">02</div>
-            <h3>Physical Store Rollout</h3>
-            <p>Apertura de tiendas físicas en ubicaciones clave, fortaleciendo la conexión con el consumidor y consolidando la presencia de marca.</p>
+            <h3 data-i18n="expansion.phases.1.title">Physical Store Rollout</h3>
+            <p data-i18n="expansion.phases.1.text">Opening physical stores in key locations to strengthen consumer connection and consolidate brand presence.</p>
           </article>
         </div>
         <div class="wide-media reveal delay-3">
@@ -117,14 +127,14 @@
           <img src="assets/img/value-proposition.jpg?v=3" alt="Value proposition illustration">
         </div>
         <div class="section-copy reveal delay-2">
-          <span class="eyebrow">Why Us</span>
-          <h2>Why Biomaussan International</h2>
+          <span class="eyebrow" data-i18n="value.eyebrow">Why Us</span>
+          <h2 data-i18n="value.title">Why Biomaussan International</h2>
           <ul class="clean-list">
-            <li>Productos respaldados por experiencia y trayectoria</li>
-            <li>Enfoque en bienestar integral</li>
-            <li>Estrategia internacional estructurada</li>
-            <li>Capacidad de escalamiento global</li>
-            <li>Oportunidades comerciales exclusivas por territorio</li>
+            <li data-i18n="value.items.0">Products backed by experience and trajectory</li>
+            <li data-i18n="value.items.1">Focus on comprehensive wellness</li>
+            <li data-i18n="value.items.2">Structured international strategy</li>
+            <li data-i18n="value.items.3">Global scaling capabilities</li>
+            <li data-i18n="value.items.4">Exclusive commercial opportunities by territory</li>
           </ul>
         </div>
       </div>
@@ -133,11 +143,11 @@
     <section class="section alt" id="opportunities">
       <div class="container grid-2">
         <div class="section-copy reveal">
-          <span class="eyebrow">Business Opportunities</span>
-          <h2>Global Distribution Opportunities</h2>
-          <p class="lead">Expande con nosotros en tu territorio.</p>
-          <p>Biomaussan International abre oportunidades para empresas interesadas en comercializar y distribuir nuestros productos en Latinoamérica y otros mercados internacionales.</p>
-          <p>Buscamos aliados estratégicos con visión de crecimiento y capacidad de desarrollo de mercado.</p>
+          <span class="eyebrow" data-i18n="opportunities.eyebrow">Business Opportunities</span>
+          <h2 data-i18n="opportunities.title">Global Distribution Opportunities</h2>
+          <p class="lead" data-i18n="opportunities.lead">Expand with us in your territory.</p>
+          <p data-i18n="opportunities.description1">Biomaussan International opens opportunities for companies interested in marketing and distributing our products in Latin America and other international markets.</p>
+          <p data-i18n="opportunities.description2">We seek strategic allies with growth vision and market development capacity.</p>
         </div>
         <div class="media-card reveal delay-2 tilt-card">
           <img src="assets/img/distribution-opportunities.jpg?v=3" alt="Global distribution opportunities illustration">
@@ -148,15 +158,15 @@
     <section class="section" id="process">
       <div class="container">
         <div class="section-heading center reveal">
-          <span class="eyebrow">Distributor Journey</span>
-          <h2>Our Partnership Process</h2>
-          <p>Un proceso claro y profesional para construir alianzas comerciales sostenibles.</p>
+          <span class="eyebrow" data-i18n="process.eyebrow">Distributor Journey</span>
+          <h2 data-i18n="process.title">Our Partnership Process</h2>
+          <p data-i18n="process.description">A clear and professional process to build sustainable commercial partnerships.</p>
         </div>
         <div class="process-grid">
-          <article class="step-card reveal"><span>01</span><h3>Application</h3><p>Completa el formulario de interés con información sobre tu empresa y territorio.</p></article>
-          <article class="step-card reveal delay-1"><span>02</span><h3>Evaluation</h3><p>Analizamos potencial económico, capacidad operativa, experiencia comercial y área de oportunidad.</p></article>
-          <article class="step-card reveal delay-2"><span>03</span><h3>Proposal</h3><p>Desarrollamos una propuesta personalizada basada en el potencial del mercado.</p></article>
-          <article class="step-card reveal delay-3"><span>04</span><h3>Alliance</h3><p>Formalizamos la relación comercial y definimos la estrategia de crecimiento.</p></article>
+          <article class="step-card reveal"><span>01</span><h3 data-i18n="process.steps.0.title">Application</h3><p data-i18n="process.steps.0.text">Complete the interest form with information about your company and territory.</p></article>
+          <article class="step-card reveal delay-1"><span>02</span><h3 data-i18n="process.steps.1.title">Evaluation</h3><p data-i18n="process.steps.1.text">We analyze economic potential, operating capacity, commercial experience, and opportunity area.</p></article>
+          <article class="step-card reveal delay-2"><span>03</span><h3 data-i18n="process.steps.2.title">Proposal</h3><p data-i18n="process.steps.2.text">We develop a personalized proposal based on market potential.</p></article>
+          <article class="step-card reveal delay-3"><span>04</span><h3 data-i18n="process.steps.3.title">Alliance</h3><p data-i18n="process.steps.3.text">We formalize the business relationship and define the growth strategy.</p></article>
         </div>
       </div>
     </section>
@@ -167,13 +177,13 @@
           <img src="assets/img/international-growth.jpg?v=3" alt="International growth illustration">
         </div>
         <div class="section-copy reveal delay-2">
-          <span class="eyebrow">Global Focus</span>
-          <h2>Built for International Growth</h2>
-          <p>Nuestro enfoque internacional nos permite adaptarnos a distintos mercados, regulaciones y comportamientos de consumo, asegurando una expansión sostenible y estratégica.</p>
+          <span class="eyebrow" data-i18n="global.eyebrow">Global Focus</span>
+          <h2 data-i18n="global.title">Built for International Growth</h2>
+          <p data-i18n="global.description">Our international focus allows us to adapt to different markets, regulations, and consumer behaviors, ensuring strategic and sustainable expansion.</p>
           <div class="stat-row">
-            <div class="stat"><strong>U.S.</strong><span>Launch Market</span></div>
-            <div class="stat"><strong>LATAM</strong><span>Expansion Potential</span></div>
-            <div class="stat"><strong>Global</strong><span>Scalable Vision</span></div>
+            <div class="stat"><strong>U.S.</strong><span data-i18n="global.stats.0">Launch Market</span></div>
+            <div class="stat"><strong>LATAM</strong><span data-i18n="global.stats.1">Expansion Potential</span></div>
+            <div class="stat"><strong>Global</strong><span data-i18n="global.stats.2">Scalable Vision</span></div>
           </div>
         </div>
       </div>
@@ -182,14 +192,14 @@
     <section class="section cta-section">
       <div class="container cta-box reveal">
         <div>
-          <span class="eyebrow">Final CTA</span>
-          <h2>Join Our Global Expansion</h2>
-          <p>Sé parte del crecimiento internacional de Biomaussan.</p>
+          <span class="eyebrow" data-i18n="cta.eyebrow">Final CTA</span>
+          <h2 data-i18n="cta.title">Join Our Global Expansion</h2>
+          <p data-i18n="cta.description">Be part of Biomaussan's international growth.</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-primary" href="#contact">Apply as Distributor</a>
-          <a class="btn btn-glass" href="#contact">Contact Us</a>
-          <a class="btn btn-outline" href="#contact">Shop in the U.S.</a>
+          <a class="btn btn-primary" href="#contact" data-i18n="cta.applyBtn">Apply as Distributor</a>
+          <a class="btn btn-glass" href="#contact" data-i18n="cta.contactBtn">Contact Us</a>
+          <a class="btn btn-outline" href="#contact" data-i18n="cta.shopBtn">Shop in the U.S.</a>
         </div>
       </div>
     </section>
@@ -197,44 +207,95 @@
     <section class="section contact-section" id="contact">
       <div class="container contact-grid">
         <div class="section-copy reveal">
-          <span class="eyebrow">Contact</span>
-          <h2>Let’s Build New Markets Together</h2>
-          <p>Usa este formulario para iniciar conversación sobre distribución, alianzas comerciales o expansión en tu territorio.</p>
-          <div class="contact-points">
-            <div><strong>Ideal para:</strong><span>Distribuidores, retailers, aliados estratégicos y socios comerciales.</span></div>
-            <div><strong>Mercados:</strong><span>Estados Unidos, Latinoamérica y otros territorios internacionales.</span></div>
-            <div><strong>Nota:</strong><span>Puedes conectar este formulario con tu correo o CRM en Hostinger.</span></div>
-          </div>
+          <span class="eyebrow" data-i18n="contact.eyebrow">Contact</span>
+          <h2 data-i18n="contact.title">Let’s Build New Markets Together</h2>
+          <p data-i18n="contact.intro">This process is intended for serious business profiles with real capacity for distribution and market development.</p>
+
+          <article class="info-block">
+            <h3 data-i18n="contact.requirements.title">Key Requirements (Self-Assessment)</h3>
+            <p data-i18n="contact.requirements.intro">Before continuing with the process, please confirm that you meet the following criteria:</p>
+            <ul class="requirements-checklist">
+              <li><span>✓</span><p data-i18n="contact.requirements.items.0">I am a business owner or represent a legally established company.</p></li>
+              <li><span>✓</span><p data-i18n="contact.requirements.items.1">I have an approximate minimum initial investment capacity of USD $180,000.00.</p></li>
+              <li><span>✓</span><p data-i18n="contact.requirements.items.2">I have experience or knowledge in nutraceutical products, supplements, or mass consumer goods.</p></li>
+              <li><span>✓</span><p data-i18n="contact.requirements.items.3">I have my own sales channels or an active distribution network.</p></li>
+              <li><span>✓</span><p data-i18n="contact.requirements.items.4">I can cover any analysis expenses in the target area (market study, surveys, etc.).</p></li>
+              <li><span>✓</span><p data-i18n="contact.requirements.items.5">I can start operations within a maximum of 60 days after signing the agreement.</p></li>
+            </ul>
+            <p class="note" data-i18n="contact.requirements.note">If you do not meet most of these points, this distribution model may not be suitable for your profile.</p>
+          </article>
+
+          <article class="info-block">
+            <h3 data-i18n="contact.entry.title">Entry Conditions</h3>
+            <ul class="detail-list">
+              <li data-i18n="contact.entry.items.0">Minimum initial purchase: 2 pallets.</li>
+              <li data-i18n="contact.entry.items.1">Content per pallet: 2,256 bottles of 120 ml.</li>
+              <li data-i18n="contact.entry.items.2">Total portfolio: 5 products.</li>
+              <li data-i18n="contact.entry.items.3">Minimum repurchase commitment for one year (inventory).</li>
+            </ul>
+            <p class="sub-title" data-i18n="contact.entry.mandatoryTitle">Mandatory composition of the initial order:</p>
+            <ul class="detail-list">
+              <li data-i18n="contact.entry.mandatoryItems.0">1 pallet of the best-selling product.</li>
+              <li data-i18n="contact.entry.mandatoryItems.1">1 pallet with a proportional assortment of the other four products.</li>
+            </ul>
+          </article>
+
+          <article class="info-block">
+            <h3 data-i18n="contact.representation.title">Representation Model</h3>
+            <ul class="detail-list">
+              <li data-i18n="contact.representation.items.0">Country-based representation (exclusive or non-exclusive, subject to evaluation).</li>
+              <li data-i18n="contact.representation.items.1">Market development through own channels and/or third-party distribution.</li>
+              <li data-i18n="contact.representation.items.2">Focus on rotation, brand positioning, and sustained growth.</li>
+            </ul>
+          </article>
+
+          <article class="info-block">
+            <h3 data-i18n="contact.launch.title">Expected Commercial Launch</h3>
+            <p data-i18n="contact.launch.intro">The interested party must present a basic launch strategy, including:</p>
+            <ul class="detail-list">
+              <li data-i18n="contact.launch.items.0">Product introduction strategy.</li>
+              <li data-i18n="contact.launch.items.1">Priority sales channels.</li>
+              <li data-i18n="contact.launch.items.2">Initial commercialization plan.</li>
+            </ul>
+          </article>
+
+          <article class="info-block">
+            <h3 data-i18n="contact.nextStep.title">Next Step After Screening</h3>
+            <p data-i18n="contact.nextStep.intro">Profiles that meet the criteria will advance to:</p>
+            <ol class="detail-list ordered-list">
+              <li data-i18n="contact.nextStep.items.0">Commercial and financial evaluation.</li>
+              <li data-i18n="contact.nextStep.items.1">Market development proposal presentation.</li>
+              <li data-i18n="contact.nextStep.items.2">Definition of commercial terms.</li>
+              <li data-i18n="contact.nextStep.items.3">Distribution agreement signing.</li>
+            </ol>
+          </article>
+
+          <article class="info-block final-note">
+            <p data-i18n="contact.finalNote.0">BIOMAUSSAN INTERNATIONAL is not looking for occasional buyers, but for strategic partners with real capacity for investment, execution, and growth.</p>
+            <p data-i18n="contact.finalNote.1">If you believe you meet this profile and wish to move forward in the process, you may request a commercial evaluation meeting.</p>
+          </article>
         </div>
+
         <form class="contact-form reveal delay-2" id="interestForm">
           <div class="field-row">
-            <div class="field"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required></div>
-            <div class="field"><label>Company</label><input type="text" name="company" placeholder="Company name" required></div>
+            <div class="field"><label data-i18n="form.fullName">Full Name</label><input type="text" name="name" placeholder="Your name" data-i18n-placeholder="form.placeholders.name" required></div>
+            <div class="field"><label data-i18n="form.company">Company</label><input type="text" name="company" placeholder="Company name" data-i18n-placeholder="form.placeholders.company" required></div>
           </div>
           <div class="field-row">
-            <div class="field"><label>Email</label><input type="email" name="email" placeholder="name@company.com" required></div>
-            <div class="field"><label>Phone / WhatsApp</label><input type="text" name="phone" placeholder="+1 555 000 0000"></div>
-          </div>
-          <div class="field-row">
-            <div class="field"><label>Country / Territory</label><input type="text" name="territory" placeholder="United States, Colombia, Chile..."></div>
-            <div class="field"><label>Business Type</label>
-              <select name="business_type">
-                <option value="">Select one</option>
-                <option>Distributor</option>
-                <option>Retailer</option>
-                <option>E-commerce Partner</option>
-                <option>Strategic Investor</option>
-                <option>Other</option>
-              </select>
-            </div>
+            <div class="field"><label data-i18n="form.email">Email</label><input type="email" name="email" placeholder="name@company.com" required></div>
+            <div class="field"><label data-i18n="form.phone">Phone / WhatsApp</label><input type="text" name="phone" placeholder="+1 555 000 0000" data-i18n-placeholder="form.placeholders.phone"></div>
           </div>
           <div class="field">
-            <label>Tell us about your market opportunity</label>
-            <textarea name="message" rows="5" placeholder="Share your company profile, territory and growth potential."></textarea>
+            <label data-i18n="form.country">Country / Territory</label>
+            <input type="text" name="territory" placeholder="United States, Colombia, Chile..." data-i18n-placeholder="form.placeholders.country" required>
           </div>
-          <button class="btn btn-primary btn-full" type="submit">Send Application</button>
-          <p class="form-note">Edita la acción del formulario en <strong>index.html</strong> para conectarlo con tu correo, FormSubmit, Formspree o tu backend.</p>
-          <p class="success-message" id="formSuccess">Thanks. Your message is ready to be connected to your preferred form service.</p>
+          <div class="field">
+            <label data-i18n="form.about">Tell us about your company, sales channels, and market opportunity</label>
+            <textarea name="message" rows="5" placeholder="Share your company profile, territory and growth potential." data-i18n-placeholder="form.placeholders.message" required></textarea>
+          </div>
+          <button class="btn btn-primary btn-full" type="submit" data-i18n="form.submit">Send Application</button>
+          <p class="form-note" data-i18n-html="form.note">Edit the form action in <strong>index.html</strong> to connect it to your email, FormSubmit, Formspree, or backend.</p>
+          <p class="success-message" id="formSuccess" data-i18n="form.success">Thanks. Your message is ready to be connected to your preferred form service.</p>
         </form>
       </div>
     </section>
@@ -243,10 +304,10 @@
   <footer class="footer">
     <div class="container footer-wrap">
       <img src="assets/img/logo-biomaussan.png" alt="Biomaussan International logo">
-      <p>Biomaussan International — Wellness expansion with a global vision.</p>
+      <p data-i18n="footer.text">Biomaussan International — Wellness expansion with a global vision.</p>
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=4"></script>
+  <script src="assets/js/main.js?v=5"></script>
 </body>
 </html>
