@@ -130,8 +130,8 @@ const translations = {
     form: {
       fullName: 'Full Name', company: 'Company', email: 'Email', phone: 'Phone / WhatsApp', country: 'Country / Territory',
       about: 'Tell us about your company, sales channels, and market opportunity', submit: 'Send Application',
-      note: 'Edit the form action in <strong>index.html</strong> to connect it to your email, FormSubmit, Formspree, or backend.',
-      success: 'Thanks. Your message is ready to be connected to your preferred form service.',
+      note: 'Your application is sent securely to our internal review database.',
+      success: 'Thanks. Your application has been sent successfully.',
       placeholders: {
         name: 'Your name', company: 'Company name', phone: '+1 555 000 0000',
         country: 'United States, Colombia, Chile...', message: 'Share your company profile, territory and growth potential.'
@@ -270,8 +270,8 @@ const translations = {
     form: {
       fullName: 'Nombre completo', company: 'Empresa', email: 'Correo electrónico', phone: 'Teléfono / WhatsApp', country: 'País / Territorio',
       about: 'Cuéntanos sobre tu empresa, canales de venta y oportunidad de mercado', submit: 'Enviar solicitud',
-      note: 'Edita la acción del formulario en <strong>index.html</strong> para conectarlo con tu correo, FormSubmit, Formspree o backend.',
-      success: 'Gracias. Tu mensaje está listo para conectarse con tu servicio de formularios preferido.',
+      note: 'Tu solicitud se envía de forma segura a nuestra base de revisión interna.',
+      success: 'Gracias. Tu solicitud se envió correctamente.',
       placeholders: {
         name: 'Tu nombre', company: 'Nombre de la empresa', phone: '+1 555 000 0000',
         country: 'Estados Unidos, Colombia, Chile...', message: 'Comparte el perfil de tu empresa, territorio y potencial de crecimiento.'
@@ -420,9 +420,45 @@ accordionGroups.forEach((group) => {
 
 const form = document.getElementById('interestForm');
 const success = document.getElementById('formSuccess');
-form?.addEventListener('submit', (e) => {
+const error = document.getElementById('formError');
+
+form?.addEventListener('submit', async (e) => {
   e.preventDefault();
-  success.style.display = 'block';
+  success.style.display = 'none';
+  if (error) error.style.display = 'none';
+
+  const formData = new FormData(form);
+  const submitButton = form.querySelector('.form-submit');
+
+  try {
+    if (submitButton) submitButton.disabled = true;
+
+    const response = await fetch(form.getAttribute('action') || 'form-handler.php', {
+      method: 'POST',
+      body: formData,
+      headers: { 'X-Requested-With': 'XMLHttpRequest' }
+    });
+
+    const data = await response.json();
+
+    if (response.ok && data.success) {
+      success.style.display = 'block';
+      form.reset();
+      return;
+    }
+
+    if (error) {
+      error.textContent = data.message || 'We could not send your application right now. Please try again.';
+      error.style.display = 'block';
+    }
+  } catch (err) {
+    if (error) {
+      error.textContent = 'Connection problem. Please try again in a moment.';
+      error.style.display = 'block';
+    }
+  } finally {
+    if (submitButton) submitButton.disabled = false;
+  }
 });
 
 document.querySelectorAll('.tilt-card').forEach((card) => {
