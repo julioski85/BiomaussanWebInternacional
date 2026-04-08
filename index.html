@@ -308,7 +308,7 @@
 
         <div class="form-column reveal delay-2">
           <div class="form-badge" data-i18n="contact.formBadge">Distributor Application · Confidential Review</div>
-          <form class="contact-form" id="interestForm">
+          <form class="contact-form" id="interestForm" action="form-handler.php" method="post">
             <h3 class="form-title" data-i18n="contact.formTitle">Start Your Qualification</h3>
             <p class="form-subtitle" data-i18n="contact.formSubtitle">Complete the required fields and our international team will review your profile.</p>
             <div class="field-row">
@@ -328,8 +328,9 @@
               <textarea name="message" rows="4" placeholder="Share your company profile, territory and growth potential." data-i18n-placeholder="form.placeholders.message" required></textarea>
             </div>
             <button class="btn btn-primary btn-full form-submit" type="submit" data-i18n="form.submit">Send Application</button>
-            <p class="form-note" data-i18n-html="form.note">Edit the form action in <strong>index.html</strong> to connect it to your email, FormSubmit, Formspree, or backend.</p>
-            <p class="success-message" id="formSuccess" data-i18n="form.success">Thanks. Your message is ready to be connected to your preferred form service.</p>
+            <p class="form-note" data-i18n-html="form.note">Your application is sent securely to our internal review database.</p>
+            <p class="success-message" id="formSuccess" data-i18n="form.success">Thanks. Your application has been sent successfully.</p>
+            <p class="error-message" id="formError">We could not send your application right now. Please try again.</p>
           </form>
         </div>
       </div>

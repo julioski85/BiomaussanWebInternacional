@@ -361,8 +361,10 @@ input::placeholder,textarea::placeholder{color:var(--input-placeholder)}
 input:focus,select:focus,textarea:focus{border-color:rgba(104,217,255,.65);box-shadow:0 0 0 3px rgba(104,217,255,.1)}
 .btn-full{width:100%;margin-top:8px}
 .form-submit{padding:16px 24px;font-size:15px;box-shadow:0 14px 30px rgba(97,184,255,.35)}
-.form-note,.success-message{font-size:13px;color:#b7c8e6;line-height:1.6}
+.form-note,.success-message,.error-message{font-size:13px;color:#b7c8e6;line-height:1.6}
 .success-message{display:none;color:#b6ffd6}
+.error-message{display:none;color:#ffd0d0}
+.form-submit:disabled{opacity:.7;cursor:not-allowed}
 .footer{padding:26px 0 50px;border-top:1px solid var(--line)}
 .footer-wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;color:var(--footer-text)}
 .footer img{height:54px;width:auto}
