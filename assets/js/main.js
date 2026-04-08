@@ -137,7 +137,13 @@ const translations = {
         country: 'United States, Colombia, Chile...', message: 'Share your company profile, territory and growth potential.'
       }
     },
-    footer: { text: 'Biomaussan International — Wellness expansion with a global vision.' }
+    footer: { text: 'Biomaussan International — Wellness expansion with a global vision.' },
+    floating: {
+      main: 'Get a Quote / Cotizar',
+      quote: 'Get a Quote / Cotizar',
+      whatsapp: 'WhatsApp (placeholder)',
+      toggleAria: 'Open quick actions'
+    }
   },
   es: {
     ui: {
@@ -277,7 +283,13 @@ const translations = {
         country: 'Estados Unidos, Colombia, Chile...', message: 'Comparte el perfil de tu empresa, territorio y potencial de crecimiento.'
       }
     },
-    footer: { text: 'Biomaussan International — Expansión de bienestar con visión global.' }
+    footer: { text: 'Biomaussan International — Expansión de bienestar con visión global.' },
+    floating: {
+      main: 'Cotizar ahora',
+      quote: 'Cotizar ahora',
+      whatsapp: 'WhatsApp (placeholder)',
+      toggleAria: 'Abrir acciones rápidas'
+    }
   }
 };
 
@@ -365,20 +377,29 @@ document.querySelectorAll('.lang-btn').forEach((button) => {
   button.addEventListener('click', () => applyLanguage(button.dataset.lang));
 });
 
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const topbar = document.querySelector('.topbar');
+const markTopbar = () => topbar?.classList.toggle('scrolled', window.scrollY > 12);
+markTopbar();
+window.addEventListener('scroll', markTopbar, { passive: true });
+
 const slides = [...document.querySelectorAll('.slide')];
 const dotsWrap = document.querySelector('.slider-dots');
 let current = 0;
 
-slides.forEach((_, i) => {
-  const btn = document.createElement('button');
-  if (i === 0) btn.classList.add('active');
-  btn.addEventListener('click', () => showSlide(i));
-  dotsWrap.appendChild(btn);
-});
+if (slides.length && dotsWrap) {
+  slides.forEach((_, i) => {
+    const btn = document.createElement('button');
+    if (i === 0) btn.classList.add('active');
+    btn.addEventListener('click', () => showSlide(i));
+    dotsWrap.appendChild(btn);
+  });
+}
 
-const dots = [...dotsWrap.children];
+const dots = dotsWrap ? [...dotsWrap.children] : [];
 
 function showSlide(index) {
+  if (!slides.length || !dots.length) return;
   slides[current].classList.remove('active');
   dots[current].classList.remove('active');
   current = index;
@@ -386,24 +407,48 @@ function showSlide(index) {
   dots[current].classList.add('active');
 }
 
-setInterval(() => showSlide((current + 1) % slides.length), 4500);
+if (!reduceMotion && slides.length > 1) {
+  setInterval(() => showSlide((current + 1) % slides.length), 4500);
+}
 
-const io = new IntersectionObserver((entries) => {
+const io = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => {
-    if (entry.isIntersecting) entry.target.classList.add('in');
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('in');
+    observer.unobserve(entry.target);
   });
 }, { threshold: 0.14 });
 
-document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+document.querySelectorAll('.reveal').forEach((el) => {
+  if (reduceMotion) {
+    el.classList.add('in');
+  } else {
+    io.observe(el);
+  }
+});
+
+const heroReveal = [...document.querySelectorAll('#hero .reveal, #hero h1, #hero p, #hero .hero-actions, #hero .hero-badges')];
+if (!reduceMotion && heroReveal.length) {
+  heroReveal.forEach((item, index) => {
+    item.style.opacity = '0';
+    item.style.transform = 'translateY(18px)';
+    item.style.transition = `opacity .62s ease ${0.09 * index}s, transform .62s ease ${0.09 * index}s`;
+  });
+  requestAnimationFrame(() => {
+    heroReveal.forEach((item) => {
+      item.style.opacity = '1';
+      item.style.transform = 'translateY(0)';
+    });
+  });
+}
 
 const toggle = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
-if (toggle) {
+if (toggle && mobileMenu) {
   toggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
 }
 
-document.querySelectorAll('.mobile-menu a').forEach((link) => link.addEventListener('click', () => mobileMenu.classList.remove('open')));
-
+document.querySelectorAll('.mobile-menu a').forEach((link) => link.addEventListener('click', () => mobileMenu?.classList.remove('open')));
 
 const accordionGroups = document.querySelectorAll('.accordion-stack');
 accordionGroups.forEach((group) => {
@@ -427,15 +472,22 @@ form?.addEventListener('submit', (e) => {
 
 document.querySelectorAll('.tilt-card').forEach((card) => {
   card.addEventListener('mousemove', (e) => {
-    if (window.innerWidth < 1000) return;
+    if (window.innerWidth < 1000 || reduceMotion) return;
     const r = card.getBoundingClientRect();
     const x = e.clientX - r.left;
     const y = e.clientY - r.top;
-    const rx = (y / r.height - 0.5) * -8;
-    const ry = (x / r.width - 0.5) * 8;
+    const rx = (y / r.height - 0.5) * -6;
+    const ry = (x / r.width - 0.5) * 6;
     card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
   });
   card.addEventListener('mouseleave', () => {
     card.style.transform = 'perspective(900px) rotateX(0) rotateY(0)';
   });
+});
+
+const floatingCta = document.getElementById('floatingCta');
+const floatingCtaToggle = document.getElementById('floatingCtaToggle');
+floatingCtaToggle?.addEventListener('click', () => {
+  const expanded = floatingCta.classList.toggle('expanded');
+  floatingCtaToggle.setAttribute('aria-expanded', String(expanded));
 });

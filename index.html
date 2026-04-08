@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="assets/css/styles.css?v=5" />
+ <link rel="stylesheet" href="assets/css/styles.css?v=6" />
 </head>
 <body data-theme="light">
   <div class="site-bg"></div>
@@ -62,12 +62,12 @@
         <div class="slide" style="background-image:url('assets/img/international-growth.jpg?v=3')"></div>
       </div>
       <div class="container hero-content reveal">
-        <span class="eyebrow" data-i18n="hero.eyebrow">Biomaussan International</span>
+        <span class="eyebrow"><i data-lucide="badge-check" aria-hidden="true"></i><span data-i18n="hero.eyebrow">Biomaussan International</span></span>
         <h1 data-i18n="hero.title">Expanding Wellness Beyond Borders</h1>
         <p data-i18n="hero.description">Biomaussan International brings high-quality wellness products from Mexico to global markets, starting in the United States through e-commerce and a strategic expansion model.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact" data-i18n="hero.primaryBtn">Shop in the U.S.</a>
-          <a class="btn btn-glass" href="#contact" data-i18n="hero.secondaryBtn">Become a Partner</a>
+          <a class="btn btn-primary" href="#contact"><i data-lucide="truck" aria-hidden="true"></i><span data-i18n="hero.primaryBtn">Shop in the U.S.</span></a>
+          <a class="btn btn-glass" href="#contact"><i data-lucide="handshake" aria-hidden="true"></i><span data-i18n="hero.secondaryBtn">Become a Partner</span></a>
         </div>
         <div class="hero-badges">
           <span data-i18n="hero.badges.0">Wellness Innovation</span>
@@ -163,10 +163,10 @@
           <p data-i18n="process.description">A clear and professional process to build sustainable commercial partnerships.</p>
         </div>
         <div class="process-grid">
-          <article class="step-card reveal"><span>01</span><h3 data-i18n="process.steps.0.title">Application</h3><p data-i18n="process.steps.0.text">Complete the interest form with information about your company and territory.</p></article>
-          <article class="step-card reveal delay-1"><span>02</span><h3 data-i18n="process.steps.1.title">Evaluation</h3><p data-i18n="process.steps.1.text">We analyze economic potential, operating capacity, commercial experience, and opportunity area.</p></article>
-          <article class="step-card reveal delay-2"><span>03</span><h3 data-i18n="process.steps.2.title">Proposal</h3><p data-i18n="process.steps.2.text">We develop a personalized proposal based on market potential.</p></article>
-          <article class="step-card reveal delay-3"><span>04</span><h3 data-i18n="process.steps.3.title">Alliance</h3><p data-i18n="process.steps.3.text">We formalize the business relationship and define the growth strategy.</p></article>
+          <article class="step-card reveal"><span><i data-lucide="file-pen-line" aria-hidden="true"></i></span><h3 data-i18n="process.steps.0.title">Application</h3><p data-i18n="process.steps.0.text">Complete the interest form with information about your company and territory.</p></article>
+          <article class="step-card reveal delay-1"><span><i data-lucide="search-check" aria-hidden="true"></i></span><h3 data-i18n="process.steps.1.title">Evaluation</h3><p data-i18n="process.steps.1.text">We analyze economic potential, operating capacity, commercial experience, and opportunity area.</p></article>
+          <article class="step-card reveal delay-2"><span><i data-lucide="briefcase-business" aria-hidden="true"></i></span><h3 data-i18n="process.steps.2.title">Proposal</h3><p data-i18n="process.steps.2.text">We develop a personalized proposal based on market potential.</p></article>
+          <article class="step-card reveal delay-3"><span><i data-lucide="handshake" aria-hidden="true"></i></span><h3 data-i18n="process.steps.3.title">Alliance</h3><p data-i18n="process.steps.3.text">We formalize the business relationship and define the growth strategy.</p></article>
         </div>
       </div>
     </section>
@@ -197,9 +197,9 @@
           <p data-i18n="cta.description">Be part of Biomaussan's international growth.</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-primary" href="#contact" data-i18n="cta.applyBtn">Apply as Distributor</a>
-          <a class="btn btn-glass" href="#contact" data-i18n="cta.contactBtn">Contact Us</a>
-          <a class="btn btn-outline" href="#contact" data-i18n="cta.shopBtn">Shop in the U.S.</a>
+          <a class="btn btn-primary" href="#contact"><i data-lucide="clipboard-check" aria-hidden="true"></i><span data-i18n="cta.applyBtn">Apply as Distributor</span></a>
+          <a class="btn btn-glass" href="#contact"><i data-lucide="messages-square" aria-hidden="true"></i><span data-i18n="cta.contactBtn">Contact Us</span></a>
+          <a class="btn btn-outline" href="#contact"><i data-lucide="shopping-bag" aria-hidden="true"></i><span data-i18n="cta.shopBtn">Shop in the U.S.</span></a>
         </div>
       </div>
     </section>
@@ -327,7 +327,7 @@
               <label data-i18n="form.about">Tell us about your company, sales channels, and market opportunity</label>
               <textarea name="message" rows="4" placeholder="Share your company profile, territory and growth potential." data-i18n-placeholder="form.placeholders.message" required></textarea>
             </div>
-            <button class="btn btn-primary btn-full form-submit" type="submit" data-i18n="form.submit">Send Application</button>
+            <button class="btn btn-primary btn-full form-submit" type="submit"><i data-lucide="send" aria-hidden="true"></i><span data-i18n="form.submit">Send Application</span></button>
             <p class="form-note" data-i18n-html="form.note">Edit the form action in <strong>index.html</strong> to connect it to your email, FormSubmit, Formspree, or backend.</p>
             <p class="success-message" id="formSuccess" data-i18n="form.success">Thanks. Your message is ready to be connected to your preferred form service.</p>
           </form>
@@ -343,7 +343,14 @@
     </div>
   </footer>
 
+
+  <div class="floating-cta" id="floatingCta">
+    <a class="floating-cta-action quote" href="#contact"><i data-lucide="file-text" aria-hidden="true"></i><span data-i18n="floating.quote">Get a Quote / Cotizar</span></a>
+    <a class="floating-cta-action whatsapp" href="https://wa.me/10000000000" target="_blank" rel="noopener"><i data-lucide="message-circle" aria-hidden="true"></i><span data-i18n="floating.whatsapp">WhatsApp (placeholder)</span></a>
+    <button class="floating-cta-main" id="floatingCtaToggle" type="button" aria-expanded="false" data-i18n-aria-label="floating.toggleAria"><i data-lucide="message-square-share" aria-hidden="true"></i><span data-i18n="floating.main">Get a Quote / Cotizar</span></button>
+  </div>
+
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="assets/js/main.js?v=5"></script>
+  <script src="assets/js/main.js?v=6"></script>
 </body>
 </html>
